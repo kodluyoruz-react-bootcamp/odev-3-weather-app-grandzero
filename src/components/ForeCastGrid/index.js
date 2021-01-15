@@ -11,7 +11,7 @@ function ForeCastGrid() {
     return (
         <Row style={{backgroundColor:"rgba(0, 0, 0, 0.5)", borderRadius:"15px",marginTop:"50px",height:"auto"}}>
         {newList.map( (item, id) => {
-          return <Col key={id} span={4}><GridItem id={id} data={item} isLast={id+1 === 6}/></Col>
+          return <Col  key={id} span={4}><GridItem id={id} data={item} isLast={id+1 === 6}/></Col>
         })}
 
       </Row>

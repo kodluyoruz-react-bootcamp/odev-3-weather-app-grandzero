@@ -85,14 +85,14 @@ export const MainProvider = ({children}) => {
                             break;
                     }
                     
-                    console.log(icon);
+                    
                     return {
                     max: parseInt(item.temp.max-272.15),
                     min: parseInt(Math.floor(item.temp.min-272.15)),
                     icon: icon,
                     main: item.weather[0].main
                 }});
-                console.log(newList[0]);
+                
                 setCityList(newList);
                 setLoading(false);
                 
@@ -103,6 +103,61 @@ export const MainProvider = ({children}) => {
 
     useEffect(() => {
         //getNewCityDetails
+        localStorage.setItem("city", city);
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_KEY}`)
+        .then((res) => {
+            let lon = res.data.coord.lon;
+            let lat = res.data.coord.lat;
+            
+            axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=${process.env.REACT_APP_WEATHER_KEY}`)
+            .then((res) => {
+                const newList = res.data.daily.map(item => {
+                    let icon;
+                    
+                    switch (item.weather[0].icon) {
+                        case "01d" || "01n":
+                            icon = sunny
+                            break;
+                        case "02d" || "02n":
+                            icon = cloudy
+                            break;
+                        case "03d" || "03n":
+                             icon = cloudy
+                            break;
+                        case "09d" || "09n":
+                            icon = lessRainy
+                             break;
+                        case "10d" || "10n":
+                            icon = rainy
+                            break;
+                        case "11d" || "11n":
+                           icon = heavyRain
+                            break;
+                        case "13d" || "13n":
+                            icon = snowy
+                            break;
+                        case "50d" || "50d":
+                             icon = sis
+                            break;           
+                        default:
+                            icon = sunny
+                            break;
+                    }
+                    
+                    
+                    return {
+                    max: parseInt(item.temp.max-272.15),
+                    min: parseInt(Math.floor(item.temp.min-272.15)),
+                    icon: icon,
+                    main: item.weather[0].main
+                }});
+                
+                setCityList(newList);
+                setLoading(false);
+                
+                
+            });
+        })
     },[city]);
     const values = {
         city,
@@ -110,7 +165,6 @@ export const MainProvider = ({children}) => {
         day,
         loading,
         cityList,
-        setCityList,
         icons
     };
     useEffect(() => {
