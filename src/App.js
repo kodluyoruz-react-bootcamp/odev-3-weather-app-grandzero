@@ -4,9 +4,10 @@ import TodayInfo from './components/TodayInfo';
 import ForeCastGrid from './components/ForeCastGrid';
 import Navbar from './components/Navbar';
 import {Row,Col} from 'antd';
+import {MainProvider} from './contexts/MainContext';
 function App() {
   return (
-    <>
+    <MainProvider>
     <Navbar/>
     <Row className="App" >
       {/*<Col span={5}  style={{height:"100%", backgroundColor:"red", opacity:"0.5"}}></Col>*/}
@@ -26,7 +27,7 @@ function App() {
 
       </Col>
     </Row>
-    </>
+    </MainProvider>
   );
 }
 
