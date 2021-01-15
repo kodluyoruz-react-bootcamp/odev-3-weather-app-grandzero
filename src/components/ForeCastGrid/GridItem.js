@@ -8,7 +8,7 @@ function GridItem({isLast}) {
                     <h2 style={{color:"white",textAlign:"center", margin:"auto"}}>Monday</h2>
                     <img alt="Weather" width="100%" height="100%" src={sunny}></img>
                     <h2 style={{color:"white",textAlign:"center", margin:"auto"}}>25 C</h2>
-            
+                    <h3 style={{color:"lightgrey",textAlign:"center", margin:"auto"}}>25 C</h3>
                         
         </Card>
     )

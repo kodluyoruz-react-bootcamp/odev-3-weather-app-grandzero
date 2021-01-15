@@ -6,14 +6,14 @@ function TodayCard() {
     return (
         
         <Card bordered={false} 
-            style={{backgroundColor:"rgba(0, 0, 0, 0.5)", borderRadius:"15px",margin:"25px",height:"100%"}}
+            style={{backgroundColor:"rgba(0, 0, 0, 0.5)", borderRadius:"15px",margin:"25px",height:"100%",zIndex:-1}}
             bodyStyle={{padding:0}}
         >
             <h1 style={{color:"white",borderBottom:"none",marginBottom:10,marginTop:10}}>İstanbul</h1>
             <hr style={{borderTop:"1px solid white", width:"85%", margin:"auto"}}></hr>
-            <Row style={{backgroundColor:"transparent",textAlign:"center"}}>
+            <Row style={{backgroundColor:"transparent",textAlign:"center", verticalAlign:"text-bottom",marginTop:"7%",height:"100%"}}>
                 <Col span={14} style={{backgroundColor:"transparent"}}>
-                    <Card  bordered={false} style={{backgroundColor:"transparent"}} bodyStyle={{backgroundColor:"transparent", padding:0}}>
+                    <Card  bordered={false} style={{backgroundColor:"transparent"}} bodyStyle={{backgroundColor:"transparent", padding:0,margin:"auto"}}>
                         <img alt="Weather" width="100%" height="100%" src={sunny}></img>
                         
                     </Card>
