@@ -43,7 +43,7 @@ function Navbar() {
             
             <form style={{zIndex: 999}} onSubmit={handleSubmit}>
                 <input type="text" className={style.searchBar} onChange={handleChange}  name="search" value={input} placeholder="Search.."></input>
-                <ul style={{height:"100%", backgroundColor:"white" ,marginTop:-5,marginLeft:5, padding:0,width:"100%",backgroundColor:"white", borderBottomLeftRadius:15,borderBottomRightRadius:15}}>
+                <ul style={{height:"100%", backgroundColor:"white" ,marginTop:-5,marginLeft:5, padding:0,width:"100%", borderBottomLeftRadius:15,borderBottomRightRadius:15}}>
                     {data && data.map((item,id) => <Province key={id} handleProvince={handleProvince} name={item.name}/>)}
                     {/*<li onClick={handleProvince} style={{paddingLeft:"6%",color:"white",fontSize:"2vw"}}>Test</li>*/}
                     

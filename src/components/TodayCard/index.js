@@ -26,11 +26,11 @@ function TodayCard() {
                 <Col span={10}>
                     <Card loading={loading} bordered={false} style={{height:"100%",backgroundColor:"transparent"}}>
                         <h1 style={{color:"white",textAlign:"center", margin:"auto"}}>{day.toLocaleDateString("en-EN", { weekday: 'long' })}</h1>
-                        <h2 style={{color:"white",textAlign:"center", margin:"auto"}}>{cityList.length != 0 && cityList[0].main}</h2>
+                        <h2 style={{color:"white",textAlign:"center", margin:"auto"}}>{cityList.length !== 0 && cityList[0].main}</h2>
                         <br></br>
                         <br></br>
-                        <h2 style={{color:"white",textAlign:"center", margin:"auto"}}>{cityList.length != 0 && `${cityList[0].max}°C`}</h2>
-                        <h2 style={{textAlign:"center", margin:"auto", color:"lightgrey"}}>{cityList.length != 0 && `${cityList[0].max}°C`}</h2>
+                        <h2 style={{color:"white",textAlign:"center", margin:"auto"}}>{cityList.length !== 0 && `${cityList[0].max}°C`}</h2>
+                        <h2 style={{textAlign:"center", margin:"auto", color:"lightgrey"}}>{cityList.length !== 0 && `${cityList[0].max}°C`}</h2>
                     </Card>
                 </Col>
             </Row>
