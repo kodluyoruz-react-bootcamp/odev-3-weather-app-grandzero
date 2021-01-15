@@ -34,10 +34,6 @@ const day = new Date();
 // 50d.png => windy
 
 
-// http://api.openweathermap.org/data/2.5/weather?q=istanbul&appid=8f6caaa7fdb0afb273e1fef54c83b7f7 => Current by city
-// https://api.opencagedata.com/geocode/v1/json?key=20e55577a74d40e3b53459eab248ef6c&q=istanbul => selected city lat lon details
-// 7 days https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=minutely,hourly&appid=8f6caaa7fdb0afb273e1fef54c83b7f7 ==> get 7 days
-
 export const MainProvider = ({children}) => {
     const [city,setCity] = useState(initCity || "İstanbul");
     
@@ -45,7 +41,7 @@ export const MainProvider = ({children}) => {
     const [cityList, setCityList] = useState([]); 
     useEffect(() => {
         //getCity details
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=istanbul&appid=${process.env.REACT_APP_WEATHER_KEY}`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=istanbul&appid=${process.env.REACT_APP_WEATHER_KEY}`)
         .then((res) => {
             let lon = res.data.coord.lon;
             let lat = res.data.coord.lat;
@@ -104,7 +100,7 @@ export const MainProvider = ({children}) => {
     useEffect(() => {
         //getNewCityDetails
         localStorage.setItem("city", city);
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_KEY}`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_KEY}`)
         .then((res) => {
             let lon = res.data.coord.lon;
             let lat = res.data.coord.lat;
