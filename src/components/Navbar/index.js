@@ -57,11 +57,8 @@ function Navbar() {
             
             
             </Col>
-            <Col span={6} offset={6} style={{backgroundColor:"transparent",textAlign:"right", alignItems:"right",color:"white", fontWeight:"bold"}}>
+            <Col span={6} offset={7} style={{backgroundColor:"transparent",textAlign:"right", alignItems:"right",color:"white", fontWeight:"bold"}}>
                 <p style={{marginTop:"4%",padding:"auto"}}>Province : {city} </p> 
-            </Col>
-            <Col span={1} offset={1} style={{backgroundColor:"transparent",textAlign:"right", alignItems:"right",color:"white", fontWeight:"bold"}}>
-                <p><BiAdjust style={{color:"red",fontSize:"25px",marginTop:"25%",padding:"auto",marginRight:"50%"}}/></p> 
             </Col>
         </Row>
     )
