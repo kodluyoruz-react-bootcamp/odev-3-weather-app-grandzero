@@ -9,8 +9,8 @@ function TodayInfo() {
     const {day,loading} = useContext(MainContext);
     const minutes = day.getMinutes().toString().length>1 ? day.getMinutes(): `0${day.getMinutes()}`;
     const dayTime = day.getDay().toString().length>1 ?  day.getDay() : `0${day.getDay()}`;
-    const monthTime = day.getMonth().toString().length>2 ?  day.getMonth() : `0${day.getMonth()+1}`;
-    const hours =  day.getHours().toString().length>2 ?  day.getHours() : `0${day.getHours()+1}`;
+    const monthTime = day.getMonth().toString().length>1 ?  day.getMonth() : `0${day.getMonth()+1}`;
+    const hours =  day.getHours().toString().length>1 ?  day.getHours() : `0${day.getHours()+1}`;
 
     const [time,setTime] = useState(hours + ":" + minutes);
     
