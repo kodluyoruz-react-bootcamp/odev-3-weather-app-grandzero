@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import { Row, Col } from 'antd';
 import style from './searchbar.module.css';
-import { BiAdjust } from "react-icons/bi";
 import {useContext} from 'react';
 import MainContext from '../../contexts/MainContext';
 import axios from 'axios';
