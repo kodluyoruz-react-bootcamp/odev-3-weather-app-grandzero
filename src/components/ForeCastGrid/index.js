@@ -9,9 +9,9 @@ function ForeCastGrid() {
   const {cityList} = useContext(MainContext);
   const newList = cityList.length !== 0 ? cityList.slice(2,cityList.length) : [];
     return (
-        <Row style={{zIndex:-1,backgroundColor:"rgba(0, 0, 0, 0.5)", borderRadius:"15px",marginTop:"50px",height:"auto"}}>
+        <Row style={{backgroundColor:"rgba(0, 0, 0, 0.5)", borderRadius:"15px",marginTop:"50px",height:"auto"}}>
         {newList.map( (item, id) => {
-          return <Col style={{zIndex:-2}}  key={id} span={4}><GridItem id={id} data={item} isLast={id+1 === 6}/></Col>
+          return <Col   key={id} span={4}><GridItem id={id} data={item} isLast={id+1 === 6}/></Col>
         })}
 
       </Row>
